@@ -8,7 +8,20 @@
     </head>
     <body>
         <script>
-            
+
+            let hand = ["rock", "paper", "scissors"];
+
+            function getComputerChoice() {
+                let choice = Math.floor(Math.random()*hand.length);
+                return hand[choice];
+            }
+
+            function getPlayerChoice() {
+                
+            }
+
+            console.log(getComputerChoice());
+
         </script>
     </body>
 </html>
