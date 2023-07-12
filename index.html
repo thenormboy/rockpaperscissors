@@ -17,10 +17,20 @@
             }
 
             function getPlayerChoice() {
-                
+                let choice = prompt("Rock, Paper or Scissors?");
+
+                if (choice.toLowerCase() === hand[0]) {
+                    return hand[0];
+                } else if (choice.toLowerCase() === hand[1]) {
+                    return hand[1];
+                } else if (choice.toLowerCase() === hand[2]) {
+                    return hand[2];
+                } else {
+                    return "I do not understand..."
+                }
             }
 
-            console.log(getComputerChoice());
+            console.log(getPlayerChoice());
 
         </script>
     </body>
