@@ -10,6 +10,8 @@
         <script>
 
             let hand = ["rock", "paper", "scissors"];
+            let playerScore = 0;
+            let computerScore = 0;
 
             function getComputerChoice() {
                 let choice = Math.floor(Math.random()*hand.length);
@@ -30,7 +32,22 @@
                 }
             }
 
-            console.log(getPlayerChoice());
+            function playRound(playerSelection, computerSelection) {
+                if (playerSelection === hand[0] && computerSelection === hand[2] || playerSelection === hand[1] && computerSelection === [0] || playerSelection === hand[2] && computerSelection === hand[1]) {
+                    playerScore += 1;
+                    return "player wins";
+                } else if (playerSelection === hand[0] && computerSelection === hand[1] || playerSelection === hand[1] && computerSelection === [2] || playerSelection === hand[2] && computerSelection === hand[0]) {
+                    computerScore +=1;
+                    return "computer wins";
+                } else if (playerSelection === computerSelection) {
+                    return "tie";
+                } else {
+                    return "Invalid";
+                }
+            }
+
+            console.log(playRound(getPlayerChoice(), hand[2]));
+            console.log(playerScore);
 
         </script>
     </body>
