@@ -50,9 +50,37 @@ function game() {
 
 const btns = document.querySelectorAll('button');
 
+const playerChoice = document.querySelector('.playerChoice');
+const computerChoice = document.querySelector('.computerChoice');
+
+const playerScoreTotal = document.querySelector('.playerScoreTotal');
+const computerScoreTotal = document.querySelector('.computerScoreTotal');
+
+const results = document.querySelector('.results');
+
 btns.forEach((button) => {
     button.addEventListener('click', () => {
-        console.log(playRound(getPlayerChoice(button.innerText), getComputerChoice()));
-        
+        let playerSelection = getPlayerChoice(button.textContent);
+        let computerSelection = getComputerChoice();
+
+        playerChoice.textContent = String(playerSelection);
+        computerChoice.textContent = String(computerSelection);
+
+        console.log(playRound(playerSelection, computerSelection));
+
+        playerScoreTotal.textContent = String(playerScore);
+        computerScoreTotal.textContent = String(computerScore);
+
+        if (playerScore == 5) {
+            results.textContent = "Player Wins";
+
+        } else if (computerScore == 5) {
+            results.textContent = "Computer Wins";
+
+        }
+
     })
 })
+
+
+
