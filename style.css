@@ -1,0 +1,20 @@
+.choiceBar {
+    display: flex;
+    justify-content: space-around;
+}
+
+.scoreBar {
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.resultBar {
+    display: flex;
+    justify-content: center;
+}

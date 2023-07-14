@@ -1,69 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script src="rps.js" defer></script>
+        <link rel="stylesheet" href="style.css">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Rock Paper Scissors</title>
     </head>
     <body>
-        <script>
-
-            const hand = ["rock", "paper", "scissors"];
-            let playerScore = 0;
-            let computerScore = 0;
-
-            function getComputerChoice() {
-                let choice = Math.floor(Math.random()*hand.length);
-                return hand[choice];
-            }
-
-            function getPlayerChoice() {
-                let choice = prompt("Rock, Paper or Scissors?");
-
-                if (choice.toLowerCase() === hand[0]) {
-                    return hand[0];
-                } else if (choice.toLowerCase() === hand[1]) {
-                    return hand[1];
-                } else if (choice.toLowerCase() === hand[2]) {
-                    return hand[2];
-                } else {
-                    return "I do not understand..."
-                }
-            }
-
-            function playRound(playerSelection, computerSelection) {
-                if (playerSelection === hand[0] && computerSelection === hand[2] || 
-                    playerSelection === hand[1] && computerSelection === [0] || 
-                    playerSelection === hand[2] && computerSelection === hand[1]) {
-                    
-                    playerScore += 1;
-                    return "player wins";
-
-                } else if (playerSelection === hand[0] && computerSelection === hand[1] || 
-                    playerSelection === hand[1] && computerSelection === [2] || 
-                    playerSelection === hand[2] && computerSelection === hand[0]) {
-                    
-                    computerScore +=1;
-                    return "computer wins";
-
-                } else if (playerSelection === computerSelection) {
-                    return "tie";
-
-                } else {
-                    return "Invalid";
-                }
-            }
-
-            function game() {
-                while (playerScore <= 5 && computerScore <=5) {
-                    playRound(getPlayerChoice(), getComputerChoice());
-                }
-            }
-
-            console.log(game());
-            console.log(playerScore);
-
-        </script>
+        <div class="buttons">
+            <button>Rock</button>
+            <button>Paper</button>
+            <button>Scissors</button>
+        </div>
+        <div class="choiceBar">
+            <h3 class="playerChoice">Player Choice: </h3>
+            <h3>Computer Choice: </h3>
+        </div>
+        <div class="scoreBar">
+            <h3>Player Score: </h3>
+            <h3>Computer Score: </h3>
+        </div>
+        <div class="resultBar">
+            <h2>Result: </h2>
+        </div>
     </body>
 </html>
